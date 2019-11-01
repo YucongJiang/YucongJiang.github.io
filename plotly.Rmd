@@ -1,0 +1,14 @@
+---
+title: "Plotly"
+author: "YucongJiang"
+date: "2019年11月1日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+library(plotly)
+```
+
