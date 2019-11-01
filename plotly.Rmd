@@ -1,8 +1,9 @@
 ---
-title: "Plotly"
-author: "YucongJiang"
-date: "2019年11月1日"
-output: html_document
+title: "NYC Restaurant Inspection Results"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
 ```{r setup, include=FALSE}
@@ -10,5 +11,88 @@ library(tidyverse)
 library(viridis)
 library(p8105.datasets)
 library(plotly)
+library(flexdashboard)
 ```
 
+```{r read}
+data("rest_inspec")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Number of restaurants inspected in 2016 by boroughs
+
+```{r bar}
+rest_2016 <- rest_inspec %>%
+  filter(
+    #date limitation
+    inspection_date >= as.Date('2016-1-1'),
+    inspection_date <= as.Date('2016-12-31'),
+    boro != "Missing"
+  ) %>%
+  mutate(
+    #factorize boro
+    boro = factor(boro)
+  ) %>%
+  group_by(boro) %>%
+  summarize(n = n()) %>%
+  plot_ly(x = ~boro, y = ~n, color = ~boro, type = "bar")
+
+#show plotly
+rest_2016
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Distributions of scores in 5 boroughs in 2016
+
+```{r box}
+rest_score_2016 <- rest_inspec %>%
+  filter(
+    inspection_date >= as.Date('2016-1-1'),
+    inspection_date <= as.Date('2016-12-31'),
+    boro != "Missing"
+  ) %>%
+  mutate(
+    boro = factor(boro)
+  ) %>%
+  #use boro and score variables only
+  select(boro, score) %>%
+  plot_ly(y = ~score, color = ~boro, type = "box", colors = "Set2")
+
+#show plotly
+rest_score_2016
+```
+
+### Number of restaurants inspected in each month in 2016
+
+```{r line}
+rest_2016_month <- rest_inspec %>%
+  filter(
+    !is.na(boro),
+    !is.na(inspection_date),
+    inspection_date >= as.Date('2016-1-1'),
+    inspection_date <= as.Date('2016-12-31'),
+    boro != "Missing"
+  ) %>%
+  mutate(
+    #create new variables month
+    month = months.Date(inspection_date)
+  ) %>%
+  filter(
+    !is.na(month)
+  ) %>%
+  mutate(
+    #factorize month and boro
+    month = factor(month, levels = month.name),
+    boro = factor(boro)
+  ) %>%
+  group_by(boro, month) %>%
+  summarize(n = n()) %>%
+  plot_ly(x = ~month, y = ~n, type = "scatter", color = ~boro, mode="lines+markers")
+
+#show plotly
+rest_2016_month
+```
