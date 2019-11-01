@@ -25,32 +25,32 @@ Research Assistant, Prof. Min Chen’s Bioinformatics Lab, Zhejiang University
                                  
 **CytoSEE (A Toolkit for Automatic Computation and Evaluation of Cytometry Data) Mar.2017**
 
--	Built UI interface by Shiny so that uploaded data would be transformed into a proprietary format
+-	Built UI interface by Shiny so that uploaded data would be transformed into a proprietary format
 
--	Took charge of data preview and pre-processing
+-	Took charge of data preview and pre-processing
 
--	Became skilled in R language, some algorithmic tool of clustering as well as data visualization
+-	Became skilled in R language, some algorithmic tool of clustering as well as data visualization
  
 
 **DaTo Plus (An Atlas of Bioinformatics Databases and Tools)  Jun. 2017**
 
--	Developed an updated version of DaTo
+-	Developed an updated version of DaTo
 
--	Labeled each of the database and tool with MeSH Term to make it easier for classification
+-	Labeled each of the database and tool with MeSH Term to make it easier for classification
 
--	Built the search engine which could identify keyword automatically and sort the list of reference considering both similarity and cited quantities
+-	Built the search engine which could identify keyword automatically and sort the list of reference considering both similarity and cited quantities
 
--	Did a statistical analysis of data on articles from each web service platform based on JIF, cited quantities, status quo and author information and visualized the result
+-	Did a statistical analysis of data on articles from each web service platform based on JIF, cited quantities, status quo and author information and visualized the result
 
--	Mastered Python more expertly and got acquaintance with algorithmic tools in text mining
+-	Mastered Python more expertly and got acquaintance with algorithmic tools in text mining
 
 ##SKILL
 **Lab Skills:** 
 
-	Protein isolation and separation by gel filtration; Gas chromatography; Microscopy; Western blot analysis; Agarose gel electrophoresis; SDS-PAGE; Spectrophotometry; RNA-seq analysis
+Protein isolation and separation by gel filtration; Gas chromatography; Microscopy; Western blot analysis; Agarose gel electrophoresis; SDS-PAGE; Spectrophotometry; RNA-seq analysis
 
 **Computer Skills:**
 
-	R, Python, C, MySQL, CSS, JavaScript, PHP, HTML
+R, Python, C, MySQL, CSS, JavaScript, PHP, HTML
 
 
